@@ -24,6 +24,7 @@ func Request(service string, object ResponseBase) error {
 	client := &http.Client{}
 	request, _ := http.NewRequest("GET", URI, nil)
 	request.SetBasicAuth("", "")
+	request.Header.Set("User-Agent", "")
 	response, err := client.Do(request)
 
 	if err != nil {
