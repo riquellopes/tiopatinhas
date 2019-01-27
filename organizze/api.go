@@ -21,7 +21,10 @@ type ResponseBase interface {
 
 // Request -
 func Request(service string, object ResponseBase) error {
-	response, err := http.Get(URI)
+	client := &http.Client{}
+	request, _ := http.NewRequest("GET", URI, nil)
+	request.SetBasicAuth("", "")
+	response, err := client.Do(request)
 
 	if err != nil {
 		return err
