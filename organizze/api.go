@@ -2,15 +2,14 @@ package organize
 
 import (
 	"encoding/json"
-	"errors"
 	"net/http"
 )
 
 // URI -
 const URI = "https://api.organizze.com.br/rest/v2"
 
-// Organize -
-type Organize struct {
+// Organizze -
+type Organizze struct {
 	User        string
 	PasswordKey string
 }
@@ -31,15 +30,11 @@ func Request(service string, object ResponseBase) error {
 		return err
 	}
 
-	if response.StatusCode != 200 {
-		return errors.New("server error")
-	}
-
 	defer response.Body.Close()
 	return json.NewDecoder(response.Body).Decode(&object)
 }
 
 // GetTransactions -
-func (o *Organize) GetTransactions(startDate, endDate string) {
+func (o *Organizze) GetTransactions(startDate, endDate string) {
 
 }
