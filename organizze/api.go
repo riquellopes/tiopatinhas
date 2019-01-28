@@ -1,7 +1,8 @@
-package organize
+package organizze
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -12,6 +13,7 @@ const URI = "https://api.organizze.com.br/rest/v2"
 type Organizze struct {
 	User        string
 	PasswordKey string
+	Name        string
 }
 
 // ResponseBase -
@@ -19,11 +21,11 @@ type ResponseBase interface {
 }
 
 // Request -
-func Request(method, service string, object ResponseBase, organizze Organizze) error {
+func Request(method, service string, object ResponseBase, organizze *Organizze) error {
 	client := &http.Client{}
-	request, _ := http.NewRequest(method, URI, nil)
+	request, _ := http.NewRequest(method, service, nil)
 	request.SetBasicAuth(organizze.User, organizze.PasswordKey)
-	request.Header.Set("User-Agent", "")
+	request.Header.Set("User-Agent", fmt.Sprintf("%s (%s)", organizze.Name, organizze.User))
 	response, err := client.Do(request)
 
 	if err != nil {
@@ -35,6 +37,11 @@ func Request(method, service string, object ResponseBase, organizze Organizze) e
 }
 
 // GetTransactions -
-func (o *Organizze) GetTransactions(startDate, endDate string) {
+func (o *Organizze) GetTransactions(date ...string) ([]Transaction, error) {
+	transaction := []Transaction{}
+	service := fmt.Sprintf("%s/%s", URI, "transactions/")
 
+	err := Request("GET", service, &transaction, o)
+
+	return transaction, err
 }
