@@ -19,10 +19,10 @@ type ResponseBase interface {
 }
 
 // Request -
-func Request(service string, object ResponseBase) error {
+func Request(method, service string, object ResponseBase, organizze Organizze) error {
 	client := &http.Client{}
-	request, _ := http.NewRequest("GET", URI, nil)
-	request.SetBasicAuth("", "")
+	request, _ := http.NewRequest(method, URI, nil)
+	request.SetBasicAuth(organizze.User, organizze.PasswordKey)
 	request.Header.Set("User-Agent", "")
 	response, err := client.Do(request)
 
