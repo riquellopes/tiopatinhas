@@ -1,5 +1,6 @@
 package organizze
 
+// TransactionsResponse -
 type TransactionsResponse []struct {
 	ID                      int         `json:"id"`
 	Description             string      `json:"description"`
