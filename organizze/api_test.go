@@ -1,6 +1,7 @@
 package organizze
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -24,4 +25,18 @@ func Test_should_get_a_list_of_itens(t *testing.T) {
 	result, _ := oozz.GetTransactions()
 
 	assert.Equal(t, result, response)
+}
+
+func Test_should_get_error(t *testing.T) {
+	defer gock.Off()
+
+	gock.New(URI).
+		Get("/transactions").
+		Reply(200).
+		SetError(errors.New("server error"))
+
+	oozz := Organizze{User: "lopes@example.com", PasswordKey: "xxxxxxxxxxxxxxxx", Name: "Rick"}
+	_, error := oozz.GetTransactions()
+
+	assert.Error(t, error)
 }
