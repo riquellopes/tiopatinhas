@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/riquellopes/tiopatinhas.svg?branch=master)](https://travis-ci.org/riquellopes/tiopatinhas)
 Tio Patinhas
 ============
 
