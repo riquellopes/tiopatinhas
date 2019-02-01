@@ -12,8 +12,8 @@ func Test_should_get_a_list_of_itens(t *testing.T) {
 	defer gock.Off()
 
 	response := []Transaction{
-		{ID: 95, Description: "Just a little cafe on mall."},
-		{ID: 96, Description: "Beer after the work."},
+		{ID: 95, Description: "Just a little cafe on mall.", AmountCents: -22999},
+		{ID: 96, Description: "Beer after the work.", AmountCents: -155294},
 	}
 
 	gock.New(URI).
