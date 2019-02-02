@@ -20,6 +20,21 @@
   version = "v1.0.0"
 
 [[projects]]
+  name = "github.com/sendgrid/rest"
+  packages = ["."]
+  revision = "306b9bef57dc36f3435ccfcc08fe6ae2c6920344"
+  version = "v2.4.1"
+
+[[projects]]
+  name = "github.com/sendgrid/sendgrid-go"
+  packages = [
+    ".",
+    "helpers/mail"
+  ]
+  revision = "8caf17aa96b4a98bae8bd216878dd50ff12897b5"
+  version = "v3.4.1"
+
+[[projects]]
   name = "github.com/stretchr/testify"
   packages = ["assert"]
   revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
@@ -34,6 +49,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "d29fe2b6e258aeb4293708829d79ae566d6dd3970abcc64a88e30da8031e6676"
+  inputs-digest = "37a5b5dff2548932a502d65cbdb8d75a62bb6f807c14316f20ec49df1f780ff4"
   solver-name = "gps-cdcl"
   solver-version = 1

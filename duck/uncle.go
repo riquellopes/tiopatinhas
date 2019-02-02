@@ -5,6 +5,8 @@ import (
 	"os"
 
 	org "github.com/riquellopes/tiopatinhas/organizze"
+	sendgrid "github.com/sendgrid/sendgrid-go"
+	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
 
 // Organizze -
@@ -48,4 +50,19 @@ func (u *Uncle) Alert() (string, error) {
 	variaction := 100 - ((moneyLeft * 100) / goalByMonth)
 	// return "You are 10% off your monthly goal!", err
 	return fmt.Sprintf("You are %d%% off your monthly goal!", variaction), err
+}
+
+// Quack -
+func (u *Uncle) Quack() {
+	from := mail.NewEmail("Tio Patinhas", os.Getenv("DUCK_FROM"))
+	to := mail.NewEmail("Henrique Lopes", os.Getenv("DUCK_TO"))
+
+	goalAlert, _ := u.Alert()
+	htmlContent := fmt.Sprintf("<strong>%s</strong>", goalAlert)
+
+	message := mail.NewSingleEmail(from, "Tio Patinhas - Quack Quack", to, goalAlert, htmlContent)
+	client := sendgrid.NewSendClient("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")
+	_, err := client.Send(message)
+
+	fmt.Println(err)
 }
