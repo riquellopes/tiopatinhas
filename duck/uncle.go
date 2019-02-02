@@ -34,8 +34,6 @@ type Uncle struct {
 
 // Alert -
 func (u *Uncle) Alert() (string, error) {
-	// // os.Getenv("DUCK_GOAL_CENTS")
-	// strconv.Atoi(os.Getenv("DUCK_MONTH_BUDGET_CENTS"))
 	// Goal monthly that I need to have every months.
 	goalByMonth := u.GoalCents / 12
 
