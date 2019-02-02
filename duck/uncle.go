@@ -48,7 +48,6 @@ func (u *Uncle) Alert() (string, error) {
 	}
 	// Calc to get monthly variaction.
 	variaction := 100 - ((moneyLeft * 100) / goalByMonth)
-	// return "You are 10% off your monthly goal!", err
 	return fmt.Sprintf("You are %d%% off your monthly goal!", variaction), err
 }
 
