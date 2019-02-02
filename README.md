@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/riquellopes/tiopatinhas.svg?branch=master)](https://travis-ci.org/riquellopes/tiopatinhas)
 [![Coverage Status](https://coveralls.io/repos/github/riquellopes/tiopatinhas/badge.svg?branch=master)](https://coveralls.io/github/riquellopes/tiopatinhas?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/riquellopes/tiopatinhas)](https://goreportcard.com/report/github.com/riquellopes/tiopatinhas)
 
 Tio Patinhas
 ============
