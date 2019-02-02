@@ -22,9 +22,8 @@ provider:
   runtime: go1.x
   profile: serverless-admin
   region: us-east-1
-
-# you can define service wide environment variables here
-environment: ${file(env.yml):default}
+  # you can define service wide environment variables here
+  environment: ${file(env.yml):default}
 
 package:
  exclude:
