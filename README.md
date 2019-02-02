@@ -16,7 +16,7 @@ It's so simple, but necessary who you'll create an account on [organizze](https:
 * **Third step:** You should to create an account on [sendgrid](https://sendgrid.com/) service, after account created, access the [documentation](https://sendgrid.com/docs/ui/account-and-settings/api-keys/) to create your app key is very simple.
 * **Fourth step:** To scheduled your app, you need to create an [aws account](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/AboutAWSAccounts.html), to use the lambda service. To build the lambda deploy, I used the [serverless](https://serverless.com/), because it's simple and I don't want to worry it.
 
-##### Enviroment variables:
+#### Enviroment variables:
 ```sh
  $ export DUCK_MONTH_BUDGET_CENTS=100
  $ export DUCK_GOAL_CENTS=100
@@ -28,5 +28,6 @@ It's so simple, but necessary who you'll create an account on [organizze](https:
  $ export ORGANIZZE_NAME="First Name Last Name"
 ```
 #### TODO LIST:
-* to create another test cases.
-* to refactor for create a simple app.
+* create another test cases.
+* refactor for create a simple app.
+* improve the documentation.
