@@ -61,7 +61,7 @@ func (u *Uncle) Quack() {
 	htmlContent := fmt.Sprintf("<strong>%s</strong>", goalAlert)
 
 	message := mail.NewSingleEmail(from, "Tio Patinhas - Quack Quack", to, goalAlert, htmlContent)
-	client := sendgrid.NewSendClient("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")
+	client := sendgrid.NewSendClient(os.Getenv("SENDGRID_KEY"))
 	_, err := client.Send(message)
 
 	fmt.Println(err)
