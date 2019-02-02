@@ -18,7 +18,7 @@ It's so simple, but necessary who you'll create an account on [organizze](https:
 
 ##### Enviroment variables:
 ```sh
- $ export export DUCK_MONTH_BUDGET_CENTS=100
+ $ export DUCK_MONTH_BUDGET_CENTS=100
  $ export DUCK_GOAL_CENTS=100
  $ export DUCK_FROM=duck@example.com
  $ export DUCK_TO=duck@example.com
